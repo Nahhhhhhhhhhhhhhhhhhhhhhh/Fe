@@ -1,0 +1,22 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))() local Window = Library.CreateLib("Zen Hub FE Bypass", "DarkTheme")
+
+-- Make the UI draggable spawn(function() -- Attempt to find the Kavo UI in CoreGui or PlayerGui local gui = game.CoreGui:FindFirstChild("KavoUI") or game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("KavoUI") if gui then local main = gui:FindFirstChild("Main") if main then main.Active = true main.Draggable = true end end end)
+
+--// FD SCRIPTS TAB -- local FDScriptsTab = Window:NewTab("FD Scripts") local KnifeSection = FDScriptsTab:NewSection("Grab Knife") local RoXploitSection = FDScriptsTab:NewSection("Ro-Xploit") local CoolkidSection = FDScriptsTab:NewSection("Coolkid") local BasicSection = FDScriptsTab:NewSection("Basic")
+
+-- Grab Knife Buttons local knifeScripts = { {"Grab Knife V1", "https://pastebin.com/raw/SSAzNj10"}, {"Grab Knife V2", "https://pastebin.com/raw/Bw7aWTBL"}, {"Grab Knife V3", "https://pastebin.com/raw/frHvA27v"}, {"Grab Knife V4", "https://pastebin.com/raw/ANs9UDrn"} } for _, knife in ipairs(knifeScripts) do KnifeSection:NewButton(knife[1], "ButtonInfo", function() loadstring(game:HttpGet(knife[2], true))() end) end
+
+-- Coolkid Exploits CoolkidSection:NewButton("Coolkid V4", "ButtonInfo", function() loadstring(game:GetObjects("rbxassetid://157645868")[1].Source)() end) CoolkidSection:NewButton("Coolkid V3", "ButtonInfo", function() loadstring(game:GetObjects("rbxassetid://142756431")[1].Source)() end)
+
+-- Ro-Xploit RoXploitSection:NewButton("Ro-Xploit 4.0", "ButtonInfo", function() loadstring(game:GetObjects("rbxassetid://175137115")[1].Source)() end) RoXploitSection:NewButton("Ro-Xploit 5.0", "ButtonInfo", function() loadstring(game:GetObjects("rbxassetid://288646117")[1].Source)() end) RoXploitSection:NewButton("Ro-Xploit 6.0", "ButtonInfo", function() loadstring(game:HttpGet("https://pastebin.com/raw/qqgpugGF", true))() end)
+
+-- Basic Scripts (legacy FE tools and GUIs) local scripts = { {"YourMom GUI", "rbxassetid://289110135", "asset"}, {"Kappa GUI", "rbxassetid://277963953", "asset"}, {"Phantom X", "rbxassetid://296648575", "asset"}, {"PME's Commands", "rbxassetid://303367841", "asset"}, {"Scythe", "rbxassetid://112829174", "asset"}, {"666", "https://pastebin.com/raw/d56eg7r9"}, {"Lua Hammer", "https://pastebin.com/raw/RKY5fTXh"}, {"Brock", "https://pastebin.com/raw/LvRVzzTL"}, {"Bird Wings", "https://pastebin.com/raw/zCypYHjJ"}, {"Doge", "https://pastebin.com/raw/31xeU3pX"}, {"Rose Hub", "https://pastebin.com/raw/9q2nraUs"}, {"Dev-Uzi", "https://pastebin.com/raw/X2n20xqM"}, {"Safazi Rocky2u", "https://raw.githubusercontent.com/LuaGunsX/LuasLegacyScripts/main/%5BAdmin%5D%20Rocky2u%20Edit"}, {"Trump Titan", "https://raw.githubusercontent.com/LuaGunsX/LuasLegacyScripts/main/%5BTitans%5D%20Trump"}, {"UVG", "https://raw.githubusercontent.com/LuaGunsX/LuasLegacyScripts/main/%5BGUI%5D%20Ultimate%20Van%20GUI"}, {"T0PK3K 0.8", "https://raw.githubusercontent.com/LuaGunsX/LuasLegacyScripts/main/%5BGUI%5D%20T0PK3K%200.8"}, {"T0PK3K 2.0", "https://raw.githubusercontent.com/LuaGunsX/LuasLegacyScripts/main/%5BGUI%5D%20T0PK3K%20V2"}, {"T0PK3K 3.0", "https://raw.githubusercontent.com/LuaGunsX/LuasLegacyScripts/main/%5BGUI%5D%20T0PK3K%20V3"}, {"T0PK3K 4.0", "https://raw.githubusercontent.com/LuaGunsX/LuasLegacyScripts/main/%5BGUI%5D%20T0PK3K%20V4"}, {"Nebula Hub", "https://pastebin.com/raw/fHGzkgyU"}, {"Nae Nae", "https://files.catbox.moe/dwlll4.txt"}, {"iOrb 2.0", "https://files.catbox.moe/uhtmgb.lua"} }
+
+for _, btn in ipairs(scripts) do BasicSection:NewButton(btn[1], "ButtonInfo", function() if btn[3] == "asset" then loadstring(game:GetObjects(btn[2])[1].Source)() else loadstring(game:HttpGet(btn[2], true))() end end) end
+
+--// GAME SCRIPTS TAB -- local GameTab = Window:NewTab("Game Scripts") local GameSection = GameTab:NewSection("All Games")
+
+GameSection:NewButton("Virgo V3", "ButtonInfo", function() loadstring(game:HttpGet("https://pastebin.com/raw/EwYDRD4Y", true))() end)
+
+GameSection:NewButton("Apoc Tools V4", "ButtonInfo", function() loadstring(game:HttpGet("https://pastebin.com/raw/0de4tAtR", true))() end)
+
