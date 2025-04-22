@@ -1,0 +1,85 @@
+-- Load UI Library
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Zen Hub - FD Expansion", "BloodTheme")
+
+--// FD SCRIPTS TAB \\--
+local fdTab = Window:NewTab("FD Scripts")
+local knifeSec = fdTab:NewSection("Grab Knife")
+local roxSec = fdTab:NewSection("Ro-Xploit")
+local coolSec = fdTab:NewSection("Coolkid")
+local otherSec = fdTab:NewSection("Other Tools")
+
+-- Helper for buttons
+local function newButton(section, title, url, useGetObject)
+    section:NewButton(title, "Click to run " .. title, function()
+        pcall(function()
+            local scriptToLoad
+            if useGetObject then
+                scriptToLoad = game:GetObjects(url)[1].Source
+            else
+                scriptToLoad = game:HttpGet(url, true)
+            end
+            loadstring(scriptToLoad)()
+        end)
+    end)
+end
+
+-- Knife Versions
+newButton(knifeSec, "Grab Knife V1", "https://pastebin.com/raw/SSAzNj10")
+newButton(knifeSec, "Grab Knife V2", "https://pastebin.com/raw/Bw7aWTBL")
+newButton(knifeSec, "Grab Knife V3", "https://pastebin.com/raw/frHvA27v")
+newButton(knifeSec, "Grab Knife V4", "https://pastebin.com/raw/ANs9UDrn")
+
+-- Coolkid
+newButton(coolSec, "Coolkid V3", "rbxassetid://142756431", true)
+newButton(coolSec, "Coolkid V4", "rbxassetid://157645868", true)
+
+-- Ro-Xploit
+newButton(roxSec, "Ro-Xploit 4.0", "rbxassetid://175137115", true)
+newButton(roxSec, "Ro-Xploit 5.0", "rbxassetid://288646117", true)
+newButton(roxSec, "Ro-Xploit 6.0", "https://pastebin.com/raw/qqgpugGF")
+
+-- Other Tools
+local otherScripts = {
+    {"YourMom GUI", "rbxassetid://289110135", true},
+    {"Kappa GUI", "rbxassetid://277963953", true},
+    {"Phantom X", "rbxassetid://296648575", true},
+    {"PME's Commands", "rbxassetid://303367841", true},
+    {"Scythe", "rbxassetid://112829174", true},
+    {"666", "https://pastebin.com/raw/d56eg7r9"},
+    {"Lua Hammer", "https://pastebin.com/raw/RKY5fTXh"},
+    {"Brock", "https://pastebin.com/raw/LvRVzzTL"},
+    {"Bird Wings", "https://pastebin.com/raw/zCypYHjJ"},
+    {"Doge", "https://pastebin.com/raw/31xeU3pX"},
+    {"Rose Hub", "https://pastebin.com/raw/9q2nraUs"},
+    {"Dev-Uzi", "https://pastebin.com/raw/X2n20xqM"},
+    {"Safazi Rocky2u", "https://raw.githubusercontent.com/LuaGunsX/LuasLegacyScripts/main/%5BAdmin%5D%20Rocky2u%20Edit"},
+    {"Trump Titan", "https://raw.githubusercontent.com/LuaGunsX/LuasLegacyScripts/main/%5BTitans%5D%20Trump"},
+    {"UVG", "https://raw.githubusercontent.com/LuaGunsX/LuasLegacyScripts/main/%5BGUI%5D%20Ultimate%20Van%20GUI"},
+    {"T0PK3K 0.8", "https://raw.githubusercontent.com/LuaGunsX/LuasLegacyScripts/main/%5BGUI%5D%20T0PK3K%200.8"},
+    {"T0PK3K 2.0", "https://raw.githubusercontent.com/LuaGunsX/LuasLegacyScripts/main/%5BGUI%5D%20T0PK3K%20V2"},
+    {"T0PK3K 3.0", "https://raw.githubusercontent.com/LuaGunsX/LuasLegacyScripts/main/%5BGUI%5D%20T0PK3K%20V3"},
+    {"T0PK3K 4.0", "https://raw.githubusercontent.com/LuaGunsX/LuasLegacyScripts/main/%5BGUI%5D%20T0PK3K%20V4"},
+    {"Nebula Hub", "https://pastebin.com/raw/fHGzkgyU"},
+    {"Nae Nae", "https://files.catbox.moe/dwlll4.txt"},
+    {"iOrb 2.0", "https://files.catbox.moe/uhtmgb.lua"},
+    {"Polaris GUI", "https://pastebin.com/raw/LcW9CV3M"},
+    {"iHub", "https://pastebin.com/raw/vH9vdbHp"},
+    {"Arceus X Remote", "https://pastebin.com/raw/JkXnXLBs"},
+    {"Gun GUI", "https://pastebin.com/raw/sqZAg6Ry"},
+    {"CMD-X", "https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source"}
+}
+
+for _, data in ipairs(otherScripts) do
+    newButton(otherSec, data[1], data[2], data[3])
+end
+
+--// GAME SCRIPTS TAB \\--
+local gameTab = Window:NewTab("Game Scripts")
+local gameSec = gameTab:NewSection("Universal")
+
+newButton(gameSec, "Virgo V3", "https://pastebin.com/raw/EwYDRD4Y")
+newButton(gameSec, "Apoc Tools V4", "https://pastebin.com/raw/0de4tAtR")
+newButton(gameSec, "Infinite Yield", "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
+newButton(gameSec, "Owl Hub", "https://pastebin.com/raw/Caniwq2N")
+newButton(gameSec, "Dark Dex", "https://pastebin.com/raw/hPq0QfKd")
